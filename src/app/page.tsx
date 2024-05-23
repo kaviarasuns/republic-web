@@ -132,8 +132,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-wrap justify-start p-8 gap-10">
-      {politicalParties.map((party) => (
-        <Card>
+      {politicalParties.map((party, index) => (
+        <Card key={index}>
           <CardHeader>
             <CardTitle className="text-wrap max-w-3">{party.name}</CardTitle>
             <CardDescription>{party.type}</CardDescription>
