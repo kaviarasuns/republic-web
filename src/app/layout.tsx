@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Nabar";
 import { ReactQueryProvider } from "@/components/ReactQueryProvider";
+import AdSense from "@/components/AdSense";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,9 @@ export default function RootLayout({
   return (
     <ReactQueryProvider>
       <html lang="en">
+        <head>
+          <AdSense pId="ca-pub-7409823253435718" />
+        </head>
         <body className={inter.className}>
           <Navbar />
           {children}
