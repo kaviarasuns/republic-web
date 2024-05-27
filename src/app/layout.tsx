@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Nabar";
 import { ReactQueryProvider } from "@/components/ReactQueryProvider";
 import AdSense from "@/components/AdSense";
+import { CSPostHogProvider } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,10 +24,12 @@ export default function RootLayout({
         <head>
           <AdSense pId="ca-pub-7409823253435718" />
         </head>
-        <body className={inter.className}>
-          <Navbar />
-          {children}
-        </body>
+        <CSPostHogProvider>
+          <body className={inter.className}>
+            <Navbar />
+            {children}
+          </body>
+        </CSPostHogProvider>
       </html>
     </ReactQueryProvider>
   );
