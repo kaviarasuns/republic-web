@@ -20,7 +20,7 @@ export default function Home() {
   });
 
   if (!isLoading) {
-    console.log(data);
+    console.log("This is Spring Data", data);
   }
 
   const politicalParties = [
@@ -131,10 +131,6 @@ export default function Home() {
     },
   ];
 
-  const handleButtonClick = () => {
-    posthog.capture("my_event", { property: "value" });
-  };
-
   return (
     <div className="flex flex-wrap justify-start p-8 gap-10">
       {politicalParties.map((party, index) => (
@@ -152,7 +148,6 @@ export default function Home() {
           </CardFooter>
         </Card>
       ))}
-      <button onClick={handleButtonClick}>Trigger Manual Event</button>
     </div>
   );
 }

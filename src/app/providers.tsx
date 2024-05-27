@@ -9,8 +9,11 @@ interface CSPostHogProviderProps {
 }
 
 if (typeof window !== "undefined") {
-  posthog.init("phc_e3P5QcahUB5umX5wH0eDiyNNk2FB9PNBsuhftVhHhUr", {
-    api_host: "https://us.i.posthog.com",
+  const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY || "";
+  const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST;
+  console.log("Key & Host", posthogKey, posthogHost);
+  posthog.init(posthogKey, {
+    api_host: posthogHost,
   });
 }
 export function CSPostHogProvider({ children }: CSPostHogProviderProps) {

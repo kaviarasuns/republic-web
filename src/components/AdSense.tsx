@@ -1,9 +1,13 @@
+"use client";
+
 import Script from "next/script";
 
 type AdsenseTypes = {
   pId: string;
 };
-export default function AdSense({ pId }: AdsenseTypes) {
+export default function AdSense() {
+  const pId = process.env.NEXT_PUBLIC_ADSENSE_PID;
+  console.log("This is pId", pId);
   return (
     <Script
       async
