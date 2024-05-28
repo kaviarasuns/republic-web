@@ -22,7 +22,7 @@ export default function RootLayout({
     <ReactQueryProvider>
       <html lang="en">
         <head>
-          <AdSense pId="ca-pub-7409823253435718" />
+          <AdSense />
         </head>
         <CSPostHogProvider>
           <body className={inter.className}>
